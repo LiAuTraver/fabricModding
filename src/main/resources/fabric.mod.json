@@ -1,11 +1,11 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "fabric-first-steps",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Fabric First Steps",
+	"description": "my first fabric mod!",
 	"authors": [
-		"Me!"
+		"ancillarycat"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"net.ancillarycat.fabricfirststeps.FabricFirstSteps"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"net.ancillarycat.fabricfirststeps.FabricFirstStepsClient"
 		]
 	},
 	"mixins": [
