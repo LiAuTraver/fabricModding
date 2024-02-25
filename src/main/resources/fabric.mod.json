@@ -8,11 +8,11 @@
 		"ancillarycat"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://liautraver.github.io",
+		"sources": "https://github.com/LiAuTraver/fabricModding"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"license": "MIT",
+	"icon": "assets/fabricfirststeps/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,9 +23,9 @@
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"fabricfirststeps.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "fabricfirststeps.client.mixins.json",
 			"environment": "client"
 		}
 	],
