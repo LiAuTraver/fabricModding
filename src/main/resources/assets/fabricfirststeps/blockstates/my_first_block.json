@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model":
+      "fabricfirststeps:block/my_first_block"
+    }
+  }
+}

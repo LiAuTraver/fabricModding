@@ -1,5 +1,5 @@
 {
-  "item.fabricfirststeps.my_first_item": "My First Item",
+  "item.fabricfirststeps.my_first_item": "My First Item in Fabric",
   "item.fabricfirststeps.my_first_item.tooltip": "My First Item Tooltip, in day %d, month %d",
   "itemGroup.fabricfirststeps.myfirstgroup": "My First Group"
 }

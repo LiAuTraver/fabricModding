@@ -4,8 +4,10 @@ import net.ancillarycat.item.MyFirstItem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -29,6 +31,8 @@ public class FabricFirstSteps implements ModInitializer {
      */
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final Item MY_FIRST_ITEM = Registry.register(Registries.ITEM, new Identifier(FabricFirstSteps.MOD_ID, "my_first_item"), new MyFirstItem(new FabricItemSettings().maxCount(16)));
+    public static final Block MY_FIRST_BLOCK = Registry.register(Registries.BLOCK, new Identifier("fabricfirststeps", "my_first_block"), new MyFirstBlock(FabricBlockSettings.create().strength(4.0F)));
+
 
     public static void loggerInfo() {
         FabricFirstSteps.LOGGER.info("Registering items for my first mod" + FabricFirstSteps.MOD_ID);
@@ -62,6 +66,7 @@ public class FabricFirstSteps implements ModInitializer {
      * However, some things (like resources) may still be uninitialized.
      * Proceed with mild caution.
      */
+
     @Override
     public void onInitialize() {
         // log an info message to indicate that the mod is initializing
