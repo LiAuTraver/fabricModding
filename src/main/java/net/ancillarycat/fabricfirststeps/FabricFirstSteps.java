@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -33,6 +34,7 @@ public class FabricFirstSteps implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final Item MY_FIRST_ITEM = Registry.register(Registries.ITEM, new Identifier(FabricFirstSteps.MOD_ID, "my_first_item"), new MyFirstItem(new FabricItemSettings().maxCount(16)));
     public static final Block MY_FIRST_BLOCK = Registry.register(Registries.BLOCK, new Identifier("fabricfirststeps", "my_first_block"), new MyFirstBlock(FabricBlockSettings.create().strength(4.0F)));
+    public static Enchantment FROST = new FrostEnchantment();
 
     public static void loggerInfo() {
         FabricFirstSteps.LOGGER.info("Registering items for my first mod" + FabricFirstSteps.MOD_ID);
@@ -76,5 +78,7 @@ public class FabricFirstSteps implements ModInitializer {
         Registry.register(Registries.ITEM_GROUP, new Identifier("fabricfirststeps", "myfirstgroup"), ITEM_GROUP);
         // register the block as an item
         Registry.register(Registries.ITEM, new Identifier("fabricfirststeps","my_first_block"), new BlockItem(MY_FIRST_BLOCK,new FabricItemSettings()));
+        // register the enchantment
+        Registry.register(Registries.ENCHANTMENT, new Identifier("fabricfirststeps","frost"), FROST);
     }
 }
