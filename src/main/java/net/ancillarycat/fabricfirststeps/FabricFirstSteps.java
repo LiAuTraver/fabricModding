@@ -9,10 +9,7 @@ import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -35,6 +32,7 @@ public class FabricFirstSteps implements ModInitializer {
     public static final Item MY_FIRST_ITEM = Registry.register(Registries.ITEM, new Identifier(FabricFirstSteps.MOD_ID, "my_first_item"), new MyFirstItem(new FabricItemSettings().maxCount(16)));
     public static final Block MY_FIRST_BLOCK = Registry.register(Registries.BLOCK, new Identifier("fabricfirststeps", "my_first_block"), new MyFirstBlock(FabricBlockSettings.create().strength(4.0F)));
     public static Enchantment FROST = new FrostEnchantment();
+    public static ToolItem MY_FIRST_HOE = Registry.register(Registries.ITEM, new Identifier("fabricfirststeps", "my_first_hoe"), new HoeItem(OneClickHarvestHoe.ONE_CLICK_HARVEST_HOE, 7, -3.2F, new FabricItemSettings()));
 
     public static void loggerInfo() {
         FabricFirstSteps.LOGGER.info("Registering items for my first mod" + FabricFirstSteps.MOD_ID);
@@ -59,6 +57,8 @@ public class FabricFirstSteps implements ModInitializer {
             .icon(() -> new ItemStack(MY_FIRST_ITEM))
             .displayName(Text.translatable("itemGroup.fabricfirststeps.myfirstgroup"))
             .entries((context, entries) -> entries.add(MY_FIRST_ITEM))
+            .entries((context, entries) -> entries.add(MY_FIRST_BLOCK))
+            .entries(((context, entries) -> entries.add(MY_FIRST_HOE)))
             .build();
 
     /**
@@ -77,8 +77,8 @@ public class FabricFirstSteps implements ModInitializer {
         // Register the item group
         Registry.register(Registries.ITEM_GROUP, new Identifier("fabricfirststeps", "myfirstgroup"), ITEM_GROUP);
         // register the block as an item
-        Registry.register(Registries.ITEM, new Identifier("fabricfirststeps","my_first_block"), new BlockItem(MY_FIRST_BLOCK,new FabricItemSettings()));
+        Registry.register(Registries.ITEM, new Identifier("fabricfirststeps", "my_first_block"), new BlockItem(MY_FIRST_BLOCK, new FabricItemSettings()));
         // register the enchantment
-        Registry.register(Registries.ENCHANTMENT, new Identifier("fabricfirststeps","frost"), FROST);
+        Registry.register(Registries.ENCHANTMENT, new Identifier("fabricfirststeps", "frost"), FROST);
     }
 }

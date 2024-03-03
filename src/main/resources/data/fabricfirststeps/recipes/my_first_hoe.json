@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA ",
+    " B ",
+    " B "
+  ],
+  "key": {
+    "A": {
+      "item": "fabricfirststeps:my_first_item"
+    },
+    "B": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "fabricfirststeps:my_first_hoe",
+    "count": 1
+  }
+}
