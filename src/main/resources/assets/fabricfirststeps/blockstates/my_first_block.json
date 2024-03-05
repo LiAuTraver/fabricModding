@@ -1,8 +1,6 @@
 {
   "variants": {
-    "": {
-      "model":
-      "fabricfirststeps:block/my_first_block"
-    }
+    "charged=false": {"model": "minecraft:redstone_block"},
+    "charged=true": {"model": "minecraft:obsidian"}
   }
 }

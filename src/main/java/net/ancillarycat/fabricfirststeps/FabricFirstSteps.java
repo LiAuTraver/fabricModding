@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -31,8 +32,9 @@ public class FabricFirstSteps implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final Item MY_FIRST_ITEM = Registry.register(Registries.ITEM, new Identifier(FabricFirstSteps.MOD_ID, "my_first_item"), new MyFirstItem(new FabricItemSettings().maxCount(16)));
     public static final Block MY_FIRST_BLOCK = Registry.register(Registries.BLOCK, new Identifier("fabricfirststeps", "my_first_block"), new MyFirstBlock(FabricBlockSettings.create().strength(4.0F)));
+    public static final ChangeableBlock CHANGEABLE_BLOCK = Registry.register(Registries.BLOCK, new Identifier("fabricfirststeps", "changeable_block"), new ChangeableBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static Enchantment FROST = new FrostEnchantment();
-    public static ToolItem MY_FIRST_HOE = Registry.register(Registries.ITEM, new Identifier("fabricfirststeps", "my_first_hoe"), new HoeItem(OneClickHarvestHoe.ONE_CLICK_HARVEST_HOE, 7, -3.2F, new FabricItemSettings()));
+    public static ToolItem MY_FIRST_HOE = Registry.register(Registries.ITEM, new Identifier("fabricfirststeps", "my_first_hoe"), new HoeItem(MyFirstToolSets.ONE_CLICK_HARVEST_HOE, 7, -3.2F, new FabricItemSettings()));
 
     public static void loggerInfo() {
         FabricFirstSteps.LOGGER.info("Registering items for my first mod" + FabricFirstSteps.MOD_ID);
@@ -59,6 +61,7 @@ public class FabricFirstSteps implements ModInitializer {
             .entries((context, entries) -> entries.add(MY_FIRST_ITEM))
             .entries((context, entries) -> entries.add(MY_FIRST_BLOCK))
             .entries(((context, entries) -> entries.add(MY_FIRST_HOE)))
+//            .entries((context, entries) -> entries.add(CHANGEABLE_BLOCK))
             .build();
 
     /**

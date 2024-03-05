@@ -1,18 +1,15 @@
 package net.ancillarycat.fabricfirststeps;
 
-import net.ancillarycat.item.MyFirstItem;
-import net.minecraft.item.Items;
-import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class OneClickHarvestHoe implements ToolMaterial {
+public class MyFirstToolSets implements ToolMaterial {
     /**
      *  ToolMaterials does not have to be registered.
      *  A good way to pass them out to tools that requires them is by keeping an instance of the tool material in the tool class(or somewhere else) and then referencing it when creating the tool.
      *  <b>But tool items should be registered.</b>
      */
-    public static final OneClickHarvestHoe ONE_CLICK_HARVEST_HOE = new OneClickHarvestHoe();
+    public static final MyFirstToolSets ONE_CLICK_HARVEST_HOE = new MyFirstToolSets();
 
     @Override
     public int getDurability(){
